@@ -24,14 +24,14 @@ class HomePage: UIViewController,ARSCNViewDelegate {
         let story = UIStoryboard(name: "Main", bundle: nil)
         let ArtTreeView = story.instantiateViewController(withIdentifier: "ViewControllerID")
         let vc = ArtTreeView as! ViewController
-        vc.arIndex = 0
+//        vc.arIndex = 0
         self.navigationController?.pushViewController(ArtTreeView, animated: true)
     }
     @IBAction func gotoArtPic1(_ sender: Any) {
         let story = UIStoryboard(name: "Main", bundle: nil)
         let ArtTreeView = story.instantiateViewController(withIdentifier: "ViewControllerID")
         let vc = ArtTreeView as! ViewController
-        vc.arIndex = 1
+//        vc.arIndex = 1
         self.navigationController?.pushViewController(ArtTreeView, animated: true)
     }
     @IBAction func gotoArtPic2(_ sender: Any) {
@@ -40,7 +40,7 @@ class HomePage: UIViewController,ARSCNViewDelegate {
         let story = UIStoryboard(name: "Main", bundle: nil)
         let ArtTreeView = story.instantiateViewController(withIdentifier: "ViewControllerID")
         let vc = ArtTreeView as! ViewController
-        vc.arIndex = 2
+//        vc.arIndex = 2
         //ArtTreeView.arIndex = 2;
         self.navigationController?.pushViewController(ArtTreeView, animated: true)
     }

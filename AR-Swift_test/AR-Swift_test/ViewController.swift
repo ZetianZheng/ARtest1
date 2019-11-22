@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     let arSession = ARSession()
     let arConfiguration = ARWorldTrackingConfiguration()
     
-    var arIndex = 0
+//    var arIndex = 0
     //图
     let ArtPicNode = SCNNode()
     
@@ -171,26 +171,28 @@ class ViewController: UIViewController {
         //1.设置几何
         //ArtPicNode.geometry = SCNSphere(radius: 3) //球形
         //图片 45 60 | 60 50 | 80 55
-        var boxW: CGFloat = 0.5
-        var boxH: CGFloat = 0.5
+        let boxW: CGFloat = 0.5
+        let boxH: CGFloat = 0.5
         let boxL: CGFloat = 0.01
-        if self.arIndex == 0 {
-            boxW = 0.45
-            boxH = 0.6
-        } else if self.arIndex == 1 {
-            boxW = 0.6
-            boxH = 0.5
-        } else if self.arIndex == 2 {
-            boxW = 0.8
-            boxH = 0.55
-        }
+//        if self.arIndex == 0 {
+//            boxW = 0.45
+//            boxH = 0.6
+//        } else if self.arIndex == 1 {
+//            boxW = 0.6
+//            boxH = 0.5
+//        } else if self.arIndex == 2 {
+//            boxW = 0.8
+//            boxH = 0.55
+//        }
         
         //创建一个长方体,用来展示图片
         ArtPicNode.geometry = SCNBox.init(width: boxW, height: boxH, length: boxL, chamferRadius: 0.1) //方形
         
-        let imageA =  ["timgKuang.jpg","timg2kuang.jpg","timg3Kuang.jpg"];
+//        let imageA =  ["timgKuang.jpg","timg2kuang.jpg","timg3Kuang.jpg"];
+        let imageSample = "timg3Kuang.jpg"
         
-        ArtPicNode.geometry?.firstMaterial?.diffuse.contents = imageA[self.arIndex]
+//        ArtPicNode.geometry?.firstMaterial?.diffuse.contents = imageA[self.arIndex]
+         ArtPicNode.geometry?.firstMaterial?.diffuse.contents = imageSample
         ArtPicNode.geometry?.firstMaterial?.multiply.intensity = 0.5 //強度
         ArtPicNode.geometry?.firstMaterial?.lightingModel = SCNMaterial.LightingModel.constant
         

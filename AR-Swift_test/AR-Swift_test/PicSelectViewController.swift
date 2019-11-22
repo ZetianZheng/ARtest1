@@ -28,12 +28,13 @@ class PicSelectController: UIViewController {
     var imagePicker = UIImagePickerController()
     
     @IBAction func btnGotoAR(_ sender: UIButton) {
-        let story = UIStoryboard(name: "Main", bundle: nil)
-              let ArtTreeView = story.instantiateViewController(withIdentifier: "ViewControllerID")
-              let vc = ArtTreeView as! ViewController
-              vc.arIndex = 1
-              self.navigationController?.pushViewController(ArtTreeView, animated: true)
-    }
+                         let story = UIStoryboard(name: "Main", bundle: nil)
+                               let ArtTreeView = story.instantiateViewController(withIdentifier: "ViewControllerID")
+//                               let vc = ArtTreeView as! ViewController
+        // pass the edited image to viewcontroller
+                             
+                               self.navigationController?.pushViewController(ArtTreeView, animated: true)
+                     }
     
     @IBAction func btnChoosePic(_ sender: UIButton) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -96,6 +97,7 @@ class PicSelectController: UIViewController {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
             self.imgPreview.image = editedImage
+            NSLog("obj:%@", editedImage);
         }
         dismiss(animated: true, completion: nil)
     }
@@ -103,5 +105,5 @@ class PicSelectController: UIViewController {
         picker.isNavigationBarHidden = false
         self.dismiss(animated: true, completion: nil)
     }
-
+   
 }
